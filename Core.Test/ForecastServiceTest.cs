@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using Core.Services;
 using System.Net.Http;
 using ShouldIWashMyCar;
@@ -7,21 +8,25 @@ using FluentAssertions;
 namespace Core.Test
 {
 	[TestFixture]
-	public class OpenWeatherServiceTest
+	public class ForecastServiceTest
 	{
 		[Test]
-		public async void GetOpenWeatherForecast_ShouldReturnTheWeatherForecast ()
+		public void GetForecast_ShouldReturnA7DayForecast ()
 		{
+			//TODO supply mock instance 
 			var openWeatherMapService = new OpenWeatherMapService (new HttpClient ());
-
+			var forecastService = new ForecastService (openWeatherMapService);
 			var location = new Location {
 				Latitude = 41.890969, Longitude = -87.676392 
 			};
 
-			var resultTask = openWeatherMapService.Get7DayForecastAsync (location);
+			var resultTask = forecastService.GetForecastAsync (location);
+
 			resultTask.Wait ();
 
 			Assert.IsNotNull (resultTask.Result);
+			Assert.AreEqual (resultTask.Result.WeatherList.Count, 7);
 		}
 	}
 }
+

@@ -19,7 +19,7 @@ namespace Core.Services
 			_openWeatherMapService = openWeatherMapService;
 		}
 
-		public async Task<Forecast> GetForecast (Location location)
+		public async Task<Forecast> GetForecastAsync (Location location)
 		{
 			var openWeatherForecast = await _openWeatherMapService.Get7DayForecastAsync (location);
 			var forecast = new Forecast ();
