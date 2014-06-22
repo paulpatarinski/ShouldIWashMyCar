@@ -6,28 +6,28 @@ using System.Threading.Tasks;
 
 namespace Core.Services
 {
-    public class OpenWeatherMapService 
-    {
-		public OpenWeatherMapService(HttpClient restClient)
-        {
-            _restClient = restClient;
-        }
+	public class OpenWeatherMapService : IOpenWeatherMapService
+	{
+		public OpenWeatherMapService (HttpClient restClient)
+		{
+			_restClient = restClient;
+		}
 
 		private readonly HttpClient _restClient;
 
-        private const string API_KEY = "f1b95129238500926b4806dfdee9a05a";
+		private const string API_KEY = "f1b95129238500926b4806dfdee9a05a";
 
-        private const string OpenWeatherApiUrl =
-            "http://api.openweathermap.org/data/2.5/forecast/daily?lat={0}&lon={1}&cnt=7&mode=json&units=imperial&APPID={2}";
+		private const string OpenWeatherApiUrl =
+			"http://api.openweathermap.org/data/2.5/forecast/daily?lat={0}&lon={1}&cnt=7&mode=json&units=imperial&APPID={2}";
 
-		public async Task<OpenWeatherForecast> Get7DayForecastAsync(Location location)
-        {
-                var uri = string.Format(OpenWeatherApiUrl, location.Latitude,
-                    location.Longitude, API_KEY);
+		public async Task<OpenWeatherForecast> Get7DayForecastAsync (Location location)
+		{
+			var uri = string.Format (OpenWeatherApiUrl, location.Latitude,
+				                       location.Longitude, API_KEY);
 
-				var result = await _restClient.GetAsync<OpenWeatherForecast>(uri);
+			var result = await _restClient.GetAsync<OpenWeatherForecast> (uri);
 
-				return result;
-        }
-    }
+			return result;
+		}
+	}
 }

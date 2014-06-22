@@ -1,15 +1,22 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Core.Test\OpenWeatherServiceTest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Core\Services\ForecastService.cs">
     <Files>
-      <File FileName="Core\Services\ForecastService.cs" Line="22" Column="29" />
-      <File FileName="Core\Services\OpenWeatherMapService.cs" Line="23" Column="25" />
-      <File FileName="Core\Models\Forecast.cs" Line="12" Column="10" />
-      <File FileName="Core.Test\OpenWeatherServiceTest.cs" Line="14" Column="75" />
+      <File FileName="Core\Services\OpenWeatherMapService.cs" Line="24" Column="3" />
+      <File FileName="Core\Services\ForecastService.cs" Line="30" Column="57" />
+      <File FileName="Core\Services\IOpenWeatherMapService.cs" Line="14" Column="2" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\WIP\ShouldIWashMyCar_Xamarin\Core.Test\OpenWeatherServiceTest.cs" line="22" column="41" />
+      <Breakpoint file="C:\WIP\ShouldIWashMyCar_Xamarin\Core\Services\OpenWeatherMapService.cs" line="30" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.ShouldIWashMyCar.Android />
