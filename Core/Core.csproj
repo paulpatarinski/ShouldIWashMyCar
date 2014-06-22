@@ -41,6 +41,8 @@
     <Compile Include="Models\WeatherViewTemplate.cs" />
     <Compile Include="Services\Interfaces\IOpenWeatherMapService.cs" />
     <Compile Include="Services\Interfaces\IForecastService.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.1.1.6206\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" />
@@ -75,5 +77,6 @@
     <Folder Include="Services\Interfaces\" />
     <Folder Include="Models\" />
     <Folder Include="Helpers\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
 </Project>

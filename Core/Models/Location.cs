@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ShouldIWashMyCar
+namespace Core
 {
 	public class Location
 	{
