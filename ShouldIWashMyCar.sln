@@ -5,12 +5,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShouldIWashMyCar.Android", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{704E57AD-49F8-48B3-81FC-C9A9C7BD5408}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Test", "Core.Test\Core.Test.csproj", "{25BE6FB3-5BBE-42DF-AB42-FFB2BB06A75D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25BE6FB3-5BBE-42DF-AB42-FFB2BB06A75D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25BE6FB3-5BBE-42DF-AB42-FFB2BB06A75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25BE6FB3-5BBE-42DF-AB42-FFB2BB06A75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25BE6FB3-5BBE-42DF-AB42-FFB2BB06A75D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{704E57AD-49F8-48B3-81FC-C9A9C7BD5408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{704E57AD-49F8-48B3-81FC-C9A9C7BD5408}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{704E57AD-49F8-48B3-81FC-C9A9C7BD5408}.Release|Any CPU.ActiveCfg = Release|Any CPU

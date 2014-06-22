@@ -1,8 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Core.Test\OpenWeatherServiceTest.cs">
+    <Files>
+      <File FileName="Core\Services\ForecastService.cs" Line="22" Column="29" />
+      <File FileName="Core\Services\OpenWeatherMapService.cs" Line="23" Column="25" />
+      <File FileName="Core\Models\Forecast.cs" Line="12" Column="10" />
+      <File FileName="Core.Test\OpenWeatherServiceTest.cs" Line="14" Column="75" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ShouldIWashMyCar.Android />
 </Properties>

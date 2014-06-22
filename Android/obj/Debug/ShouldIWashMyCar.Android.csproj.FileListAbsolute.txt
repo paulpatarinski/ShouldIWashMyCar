@@ -8,10 +8,12 @@ C:\WIP\ShouldIWashMyCar_Xamarin\Android\bin\Debug\Xamarin.Android.Support.v4.dll
 C:\WIP\ShouldIWashMyCar_Xamarin\Android\bin\Debug\Xamarin.Forms.Core.dll
 C:\WIP\ShouldIWashMyCar_Xamarin\Android\bin\Debug\Xamarin.Forms.Platform.Android.dll
 C:\WIP\ShouldIWashMyCar_Xamarin\Android\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\WIP\ShouldIWashMyCar_Xamarin\Android\bin\Debug\Newtonsoft.Json.dll
 C:\WIP\ShouldIWashMyCar_Xamarin\Android\bin\Debug\ShouldIWashMyCar.pdb
 C:\WIP\ShouldIWashMyCar_Xamarin\Android\bin\Debug\ShouldIWashMyCar.dll.mdb
 C:\WIP\ShouldIWashMyCar_Xamarin\Android\bin\Debug\Xamarin.Forms.Core.xml
 C:\WIP\ShouldIWashMyCar_Xamarin\Android\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\WIP\ShouldIWashMyCar_Xamarin\Android\bin\Debug\Newtonsoft.Json.xml
 C:\WIP\ShouldIWashMyCar_Xamarin\Android\obj\Debug\ShouldIWashMyCar.Android.csprojResolveAssemblyReference.cache
 C:\WIP\ShouldIWashMyCar_Xamarin\Android\obj\Debug\ShouldIWashMyCar.Android.dll
 C:\WIP\ShouldIWashMyCar_Xamarin\Android\obj\Debug\ShouldIWashMyCar.Android.pdb
