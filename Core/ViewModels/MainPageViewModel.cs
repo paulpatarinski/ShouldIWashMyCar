@@ -53,6 +53,13 @@ namespace Core
 			set { ChangeAndNotify (ref _statusMessageIsVisible, value); }
 		}
 
+		private string _reason;
+
+		public string Reason {
+			get { return _reason; }
+			set { ChangeAndNotify (ref _reason, value); }
+		}
+
 		private async Task GetForecast ()
 		{
 			StatusMessageIsVisible = true;
@@ -67,7 +74,9 @@ namespace Core
 			var forecast = await _forecastService.GetForecastAsync (location);
 
 			StatusMessageIsVisible = false;
+
 			DaysClean = forecast.DaysClean.ToString ();
+			Reason = forecast.Reason;
 			WeatherList = forecast.WeatherList;
 		}
 	}
