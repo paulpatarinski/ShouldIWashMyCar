@@ -1,0 +1,1 @@
+C:\WIP\ShouldIWashMyCar_Xamarin\ShouldIWashMyCar\ShouldIWashMyCar\obj\Debug\ShouldIWashMyCar.csprojResolveAssemblyReference.cache

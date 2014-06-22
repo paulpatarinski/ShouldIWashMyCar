@@ -1,0 +1,8 @@
+C:\WIP\ShouldIWashMyCar_Xamarin\Core\bin\Debug\ShouldIWashMyCar.dll
+C:\WIP\ShouldIWashMyCar_Xamarin\Core\bin\Debug\ShouldIWashMyCar.pdb
+C:\WIP\ShouldIWashMyCar_Xamarin\Core\bin\Debug\Xamarin.Forms.Core.dll
+C:\WIP\ShouldIWashMyCar_Xamarin\Core\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\WIP\ShouldIWashMyCar_Xamarin\Core\bin\Debug\Xamarin.Forms.Core.xml
+C:\WIP\ShouldIWashMyCar_Xamarin\Core\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\WIP\ShouldIWashMyCar_Xamarin\Core\obj\Debug\ShouldIWashMyCar.dll
+C:\WIP\ShouldIWashMyCar_Xamarin\Core\obj\Debug\ShouldIWashMyCar.pdb
