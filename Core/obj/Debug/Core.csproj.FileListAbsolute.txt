@@ -15,4 +15,3 @@ C:\WIP\ShouldIWashMyCar_Xamarin\Core\bin\Debug\System.Net.Http.Extensions.xml
 C:\WIP\ShouldIWashMyCar_Xamarin\Core\bin\Debug\System.Net.Http.Primitives.xml
 C:\WIP\ShouldIWashMyCar_Xamarin\Core\obj\Debug\ShouldIWashMyCar.dll
 C:\WIP\ShouldIWashMyCar_Xamarin\Core\obj\Debug\ShouldIWashMyCar.pdb
-C:\WIP\ShouldIWashMyCar_Xamarin\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache

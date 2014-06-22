@@ -2,3 +2,5 @@
 *obj*
 Android/obj*
 ShouldIWashMyCar.userprefs
+Core/obj/*
+Android/obj/*
