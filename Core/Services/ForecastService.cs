@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.Services
 {
-	public class ForecastService
+	public class ForecastService : IForecastService
 	{
 		OpenWeatherMapService _openWeatherMapService {
 			get;

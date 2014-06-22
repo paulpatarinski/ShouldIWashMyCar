@@ -6,7 +6,7 @@
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{704E57AD-49F8-48B3-81FC-C9A9C7BD5408}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>ShouldIWashMyCar</RootNamespace>
+    <RootNamespace>Core</RootNamespace>
     <AssemblyName>ShouldIWashMyCar</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
@@ -39,7 +39,8 @@
     <Compile Include="Helpers\HttpClientExtensions.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\WeatherViewTemplate.cs" />
-    <Compile Include="Services\IOpenWeatherMapService.cs" />
+    <Compile Include="Services\Interfaces\IOpenWeatherMapService.cs" />
+    <Compile Include="Services\Interfaces\IForecastService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.1.1.6206\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" />
