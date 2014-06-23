@@ -1,13 +1,6 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Core\Models\Location.cs">
-    <Files>
-      <File FileName="Core\Services\ForecastService.cs" Line="22" Column="67" />
-      <File FileName="Core.Test\ForecastServiceTest.cs" Line="30" Column="3" />
-      <File FileName="Core\Models\Forecast.cs" Line="8" Column="56" />
-      <File FileName="Core\Models\OpenWeatherForecast.cs" Line="8" Column="23" />
-      <File FileName="Core\Models\Location.cs" Line="3" Column="15" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="MonoDevelop.NUnit.TestPad">
         <State expanded="True" selected="True" />
@@ -20,4 +13,5 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ShouldIWashMyCar.Android AndroidDeviceId-Debug="192.168.56.101:5555" />
 </Properties>

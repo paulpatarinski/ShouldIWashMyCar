@@ -3,6 +3,7 @@ using Core.Services;
 using System.Net.Http;
 using ShouldIWashMyCar;
 using FluentAssertions;
+using Xamarin.Forms.Labs.Services.Geolocation;
 
 namespace Core.Test
 {
@@ -14,7 +15,7 @@ namespace Core.Test
 		{
 			var openWeatherMapService = new OpenWeatherMapService (new HttpClient ());
 
-			var location = new Location {
+			var location = new Position {
 				Latitude = 41.890969, Longitude = -87.676392 
 			};
 

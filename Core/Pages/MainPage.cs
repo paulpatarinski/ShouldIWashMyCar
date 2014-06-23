@@ -21,7 +21,6 @@ namespace Core
 				ColumnDefinitions = new ColumnDefinitionCollection{ new ColumnDefinition{ Width = new GridLength (1, GridUnitType.Star) } }
 			};
 
-
 			var statusMessageLabel = new Label { HorizontalOptions = LayoutOptions.Center, TextColor = Color.White };
 
 			statusMessageLabel.SetBinding<MainPageViewModel> (Label.TextProperty, vm => vm.StatusMessage);

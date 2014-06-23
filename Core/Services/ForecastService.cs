@@ -4,6 +4,7 @@ using System.Linq;
 using Core.Models;
 using ShouldIWashMyCar;
 using System.Threading.Tasks;
+using Xamarin.Forms.Labs.Services.Geolocation;
 
 namespace Core.Services
 {
@@ -19,7 +20,7 @@ namespace Core.Services
 			_openWeatherMapService = openWeatherMapService;
 		}
 
-		public async Task<Forecast> GetForecastAsync (Location location)
+		public async Task<Forecast> GetForecastAsync (Position location)
 		{
 			var openWeatherForecast = await _openWeatherMapService.Get7DayForecastAsync (location);
 			var forecast = new Forecast ();

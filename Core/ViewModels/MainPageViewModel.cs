@@ -4,6 +4,8 @@ using Xamarin.Forms;
 using Core.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Xamarin.Forms.Labs.Services.Geolocation;
+using System.Threading;
 
 namespace Core
 {
@@ -13,12 +15,35 @@ namespace Core
 		{
 			_navigation = navigation;
 			_forecastService = forecastService;
-			GetForecast ();
-		}
 
+			Setup ();
+
+			if (_geolocator.IsGeolocationEnabled) {
+				GetForecastAsync ();
+			} else {
+				StatusMessage = "GPS Disabled, please enable GPS.";
+			}
+		}
 
 		INavigation _navigation;
 		readonly IForecastService _forecastService;
+		IGeolocator _geolocator;
+		CancellationTokenSource _cancelSource;
+		private TaskScheduler scheduler = TaskScheduler.FromCurrentSynchronizationContext ();
+
+		void Setup ()
+		{
+			if (_geolocator != null)
+				return;
+
+			_geolocator = DependencyService.Get<IGeolocator> ();
+			_geolocator.PositionError += GeolocatorOnPositionError;
+		}
+
+		void GeolocatorOnPositionError (object sender, PositionErrorEventArgs e)
+		{
+			StatusMessage = e.Error.ToString ();
+		}
 
 		private List<WeatherViewTemplate> _weatherList;
 
@@ -60,25 +85,41 @@ namespace Core
 			set { ChangeAndNotify (ref _reason, value); }
 		}
 
-		private async Task GetForecast ()
+		private async Task GetForecastAsync ()
 		{
 			StatusMessageIsVisible = true;
 			StatusMessage = "Getting current location...";
 
-			//TODO get current location
-			var location = new Location {
-				Latitude = 41.890969, Longitude = -87.676392 
-			};
+			_cancelSource = new CancellationTokenSource ();
 
-			StatusMessage = "Getting weather forecast...";
-			var forecast = await _forecastService.GetForecastAsync (location);
+			Position position = null;
 
-			StatusMessageIsVisible = false;
+			await _geolocator.GetPositionAsync (timeout: 10000, cancelToken: _cancelSource.Token, includeHeading: true).ContinueWith (t => {
+				if (t.IsFaulted) {
+					var geolocationException = t.Exception.InnerException as GeolocationException;
 
-			DaysClean = forecast.DaysClean.ToString ();
-			Reason = forecast.Reason;
-			WeatherList = forecast.WeatherList;
+					if (geolocationException == null)
+						StatusMessage = t.Exception.InnerException.ToString ();
+					else
+						StatusMessage = geolocationException.Error.ToString ();
+				} else if (t.IsCanceled)
+					StatusMessage = "Permission Denied";
+				else {
+					position = t.Result;
+				}
+			}, scheduler);
+
+			if (position != null) {
+				StatusMessage = "Getting weather forecast...";
+
+				var forecast = await _forecastService.GetForecastAsync (position);
+
+				StatusMessageIsVisible = false;
+
+				DaysClean = forecast.DaysClean.ToString ();
+				Reason = forecast.Reason;
+				WeatherList = forecast.WeatherList;
+			}
 		}
 	}
 }
-
