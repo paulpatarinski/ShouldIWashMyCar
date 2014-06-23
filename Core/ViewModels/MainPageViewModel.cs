@@ -15,6 +15,7 @@ namespace Core
 		{
 			_navigation = navigation;
 			_forecastService = forecastService;
+			ForecastIsVisible = false;
 
 			Setup ();
 
@@ -78,6 +79,13 @@ namespace Core
 			set { ChangeAndNotify (ref _statusMessageIsVisible, value); }
 		}
 
+		private bool _forecastIsVisibile;
+
+		public bool ForecastIsVisible {
+			get { return _forecastIsVisibile; }
+			set { ChangeAndNotify (ref _forecastIsVisibile, value); }
+		}
+
 		private string _reason;
 
 		public string Reason {
@@ -119,6 +127,8 @@ namespace Core
 				DaysClean = forecast.DaysClean.ToString ();
 				Reason = forecast.Reason;
 				WeatherList = forecast.WeatherList;
+
+				ForecastIsVisible = true;
 			}
 		}
 	}

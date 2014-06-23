@@ -40,6 +40,8 @@ namespace Core
 				VerticalOptions = LayoutOptions.CenterAndExpand
 			};
 
+			stackLayout.SetBinding<MainPageViewModel> (VisualElement.IsVisibleProperty, vm => vm.ForecastIsVisible);
+
 			var daysLabel = new Label ();
 			daysLabel.SetBinding<MainPageViewModel> (Label.TextProperty, vm => vm.DaysClean);
 

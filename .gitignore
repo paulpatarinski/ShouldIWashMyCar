@@ -4,3 +4,5 @@ Android/obj*
 ShouldIWashMyCar.userprefs
 Core/obj/*
 Android/obj/*
+Android/obj/Debug/*
+Core/obj/Debug/*
