@@ -15,8 +15,8 @@ namespace Core
 			var masterGrid = new Grid {
 				RowDefinitions = new RowDefinitionCollection {
 					new RowDefinition{ Height = new GridLength (0.1, GridUnitType.Star) },
-					new RowDefinition{ Height = new GridLength (0.8, GridUnitType.Star) },
-					new RowDefinition{ Height = new GridLength (0.1, GridUnitType.Star) }
+					new RowDefinition{ Height = new GridLength (0.4, GridUnitType.Star) },
+					new RowDefinition{ Height = new GridLength (0.5, GridUnitType.Star) }
 				},
 				ColumnDefinitions = new ColumnDefinitionCollection{ new ColumnDefinition{ Width = new GridLength (1, GridUnitType.Star) } }
 			};
@@ -26,8 +26,19 @@ namespace Core
 			statusMessageLabel.SetBinding<MainPageViewModel> (Label.TextProperty, vm => vm.StatusMessage);
 			statusMessageLabel.SetBinding<MainPageViewModel> (VisualElement.IsVisibleProperty, vm => vm.StatusMessageIsVisible);
 
+			var forecastListview = new ListView ();
+
+			var forecastListviewItemTemplate = new DataTemplate (typeof(TextCell));
+
+			forecastListviewItemTemplate.SetBinding (TextCell.TextProperty, "WeatherCondition");
+			forecastListviewItemTemplate.SetBinding (TextCell.DetailProperty, "TempHigh");
+
+			forecastListview.ItemTemplate = forecastListviewItemTemplate;
+			forecastListview.SetBinding<MainPageViewModel> (ListView.ItemsSourceProperty, vm => vm.WeatherList);
+
 			masterGrid.Children.Add (statusMessageLabel, 0, 0);
 			masterGrid.Children.Add (CreateForecastStatusStackLayout (), 0, 1);
+			masterGrid.Children.Add (forecastListview, 0, 2);
 
 			Content = masterGrid;
 		}
