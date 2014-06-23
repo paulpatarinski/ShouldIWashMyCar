@@ -42,19 +42,19 @@ namespace Core
 
 			stackLayout.SetBinding<MainPageViewModel> (VisualElement.IsVisibleProperty, vm => vm.ForecastIsVisible);
 
-			var daysLabel = new Label ();
+			var daysLabel = new LargeLabel ();
 			daysLabel.SetBinding<MainPageViewModel> (Label.TextProperty, vm => vm.DaysClean);
 
-			var reasonLabel = new Label ();
+			var reasonLabel = new LargeLabel ();
 			reasonLabel.SetBinding<MainPageViewModel> (Label.TextProperty, vm => vm.Reason);
 
-			stackLayout.Children.Add (new Label {
+			stackLayout.Children.Add (new LargeLabel {
 				Text = "Clean for "
 			});
 
 			stackLayout.Children.Add (daysLabel);
 
-			stackLayout.Children.Add (new Label {
+			stackLayout.Children.Add (new LargeLabel {
 				Text = "days...due to"
 			});
 

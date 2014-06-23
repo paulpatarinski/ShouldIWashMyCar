@@ -1,11 +1,13 @@
 ﻿using System;
+using Xamarin.Forms;
 
 namespace Core
 {
-	public class LargeLavbel
+	public class LargeLabel : Label
 	{
-		public LargeLavbel ()
+		public LargeLabel ()
 		{
+			Font = Font.SystemFontOfSize (NamedSize.Large);
 		}
 	}
 }

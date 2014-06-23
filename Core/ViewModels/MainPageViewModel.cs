@@ -122,13 +122,16 @@ namespace Core
 
 				var forecast = await _forecastService.GetForecastAsync (position);
 
-				StatusMessageIsVisible = false;
+				Device.BeginInvokeOnMainThread (() => {
+					StatusMessageIsVisible = false;
 
-				DaysClean = forecast.DaysClean.ToString ();
-				Reason = forecast.Reason;
-				WeatherList = forecast.WeatherList;
+					DaysClean = forecast.DaysClean.ToString ();
+					Reason = forecast.Reason;
+					WeatherList = forecast.WeatherList;
 
-				ForecastIsVisible = true;
+					ForecastIsVisible = true;
+				});
+
 			}
 		}
 	}
