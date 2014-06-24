@@ -16,6 +16,8 @@ namespace Core
 			_navigation = navigation;
 			_forecastService = forecastService;
 
+			LoadingImage = "Radar";
+
 			Setup ();
 
 			if (_geolocator.IsGeolocationEnabled) {
@@ -52,18 +54,18 @@ namespace Core
 			set { ChangeAndNotify (ref _statusMessage, value); }
 		}
 
-		private bool _statusMessageIsVisible;
 
-		public bool StatusMessageIsVisible {
-			get { return _statusMessageIsVisible; }
-			set { ChangeAndNotify (ref _statusMessageIsVisible, value); }
+		private string _loadingImage;
+
+		public string LoadingImage {
+			get { return _loadingImage; }
+			set { ChangeAndNotify (ref _loadingImage, value); }
 		}
 
 		public Forecast Forecast{ get; set; }
 
 		private async Task GetForecastAsync ()
 		{
-			StatusMessageIsVisible = true;
 			StatusMessage = "Getting current location...";
 
 			_cancelSource = new CancellationTokenSource ();
@@ -86,6 +88,7 @@ namespace Core
 			}, scheduler);
 
 			if (position != null) {
+				LoadingImage = "Sunny";
 				StatusMessage = "Getting weather forecast...";
 
 				var forecast = await _forecastService.GetForecastAsync (position);

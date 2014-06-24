@@ -22,9 +22,21 @@ namespace Core
 			};
 
 			statusMessageLabel.SetBinding<LoadingViewModel> (Label.TextProperty, vm => vm.StatusMessage);
-			statusMessageLabel.SetBinding<LoadingViewModel> (VisualElement.IsVisibleProperty, vm => vm.StatusMessageIsVisible);
 
-			Content = statusMessageLabel;
+			var stackLayout = new StackLayout {
+				HorizontalOptions = LayoutOptions.Center,
+				VerticalOptions = LayoutOptions.Center
+			};
+
+			var loadingImage = new Image ();
+
+			loadingImage.SetBinding<LoadingViewModel> (Image.SourceProperty, vm => vm.LoadingImage);
+
+			stackLayout.Children.Add (loadingImage);
+			stackLayout.Children.Add (statusMessageLabel);
+			stackLayout.Children.Add (new ActivityIndicator{ IsRunning = true }); 	
+
+			Content = stackLayout;
 		}
 	}
 }
