@@ -90,9 +90,7 @@ namespace Core
 
 				var forecast = await _forecastService.GetForecastAsync (position);
 
-				Forecast = forecast;
-
-				await _navigation.PopAsync ();
+				await _navigation.PushAsync (new ForecastPage (forecast));
 			}
 		}
 	}

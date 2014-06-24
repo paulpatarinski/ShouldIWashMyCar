@@ -42,7 +42,6 @@
     <Compile Include="Services\Interfaces\IOpenWeatherMapService.cs" />
     <Compile Include="Services\Interfaces\IForecastService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="Pages\MainPage.cs" />
     <Compile Include="Helpers\CustomControls\LargeLabel.cs" />
     <Compile Include="Pages\ForecastPage.cs" />
     <Compile Include="ViewModels\ForecastViewModel.cs" />

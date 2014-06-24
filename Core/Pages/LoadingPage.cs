@@ -12,9 +12,8 @@ namespace Core
 			NavigationPage.SetHasNavigationBar (this, false);
 
 			//TODO : Inject ForecastService
-			_loadingViewModel = new LoadingViewModel (Navigation, new ForecastService (new OpenWeatherMapService (new HttpClient ())));
 
-			BindingContext = _loadingViewModel;
+			BindingContext = new LoadingViewModel (Navigation, new ForecastService (new OpenWeatherMapService (new HttpClient ())));
 
 			var statusMessageLabel = new LargeLabel {
 				HorizontalOptions = LayoutOptions.Center,
@@ -26,15 +25,6 @@ namespace Core
 			statusMessageLabel.SetBinding<LoadingViewModel> (VisualElement.IsVisibleProperty, vm => vm.StatusMessageIsVisible);
 
 			Content = statusMessageLabel;
-		}
-
-		LoadingViewModel _loadingViewModel;
-
-		protected override void OnDisappearing ()
-		{
-			base.OnDisappearing ();
-
-			Navigation.PushAsync (new ForecastPage (_loadingViewModel.Forecast));
 		}
 	}
 }
