@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<IconProject Version="2.0" Name="Cloud">
+  <Icon Name="Cloud" HasCharacterMap="false" Data="F1M384.734,669.68C384.835,669.68 384.934,669.681 385.036,669.684 386.085,669.713 386.968,668.874 386.908,667.826 386.885,667.407 386.872,666.986 386.872,666.565 386.872,652.852 397.447,641.698 410.442,641.698 420.07,641.698 428.614,647.875 432.215,657.052 432.661,658.189 433.676,659 434.864,659.279 443.512,661.297 450.002,669.435 450.002,679.154 450.002,690.385 441.346,699.523 430.697,699.523L384.734,699.523C376.934,699.523 370.593,692.823 370.593,684.601 370.593,676.368 376.934,669.68 384.734,669.68z" IsDirty="false" GroupName="Application" ExportCommand="MetroGraphicsPackage.IconCommand">
+    <Settings MainWidth="60" MainHeight="60" FlipX="1" FlipY="1" CustomSize="60" IconShape="None" BackgroundBrush="#FF000000" ContentWidth="60" ContentHeight="60" Angle="0" SizeIndex="7" Padding="0" MaximumPadding="19" IconBrush="#FFFFFFFF" FontFamily="Webdings" Character="&gt;" FlipCommand="MetroGraphicsPackage.IconCommand" IsBackgroundVisible="true" />
+  </Icon>
+</IconProject>

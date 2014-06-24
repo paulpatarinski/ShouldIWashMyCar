@@ -82,6 +82,9 @@
     <AndroidResource Include="Resources\drawable\Radar.png" />
     <AndroidResource Include="Resources\drawable\Sunny.png" />
     <AndroidResource Include="Resources\drawable\CarSideView.png" />
+    <AndroidResource Include="Resources\drawable\Rain.png" />
+    <AndroidResource Include="Resources\drawable\Cloud.png" />
+    <AndroidResource Include="Resources\drawable\Sun.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.1.1.6206\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" />

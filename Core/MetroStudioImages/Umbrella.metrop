@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<IconProject Version="2.0" Name="Umbrella">
+  <Icon Name="Umbrella" HasCharacterMap="false" Data="F1M24.3411,157.903C27.1159,153.656 31.0664,150.682 36.1796,148.986 41.2916,147.282 46.25,147.326 51.0585,149.111 55.8684,150.895 59.8984,154.2 63.1497,159.021 61.2708,158.567 59.5325,158.646 57.9375,159.245 56.2825,159.861 54.9128,160.984 53.8347,162.592 52.0651,162.109 50.3867,162.054 48.7981,162.438 46.7721,162.926 45.0781,163.964 43.7292,165.553L50.5899,189.208 48.8919,189.7 42.0481,166.107C40.1953,165.779 38.4921,165.827 36.9323,166.262 34.5443,166.929 32.5339,168.159 30.9036,169.963 29.2239,169.314 27.6016,169.143 26.0169,169.439 25.5077,169.534 25.0221,169.661 24.5716,169.817 23.0013,170.367 21.6484,171.411 20.5065,172.959 20.2891,167.169 21.5612,162.149 24.3411,157.903z" IsDirty="true" GroupName="Miscellaneous" ExportCommand="MetroGraphicsPackage.IconCommand">
+    <Settings MainWidth="32" MainHeight="32" FlipX="1" FlipY="1" CustomSize="32" IconShape="None" BackgroundBrush="#FF000000" ContentWidth="16" ContentHeight="16" Angle="0" SizeIndex="3" Padding="8" MaximumPadding="10" IconBrush="#FFFFFFFF" FontFamily="Webdings" Character="&gt;" FlipCommand="MetroGraphicsPackage.IconCommand" IsBackgroundVisible="true" />
+  </Icon>
+</IconProject>

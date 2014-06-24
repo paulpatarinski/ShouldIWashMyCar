@@ -36,7 +36,8 @@ namespace Core.Services
 					WeatherCondition = weather.Description,
 					DayAbbreviation = dtf.GetAbbreviatedDayName (date.DayOfWeek),
 					TempHigh = forecastItem.Temperature.Max.ToString () + "º",
-					TempLow = forecastItem.Temperature.Min.ToString () + "º"
+					TempLow = forecastItem.Temperature.Min.ToString () + "º",
+					Icon = GetWeatherIcon (weather.Main)
 				});
 			
 			}
@@ -62,6 +63,23 @@ namespace Core.Services
 			forecast.DaysClean = daysClean;
 
 			return forecast;
+		}
+
+		string GetWeatherIcon (string description)
+		{
+			var descriptionToLower = description.ToLower ();
+
+			switch (descriptionToLower) {
+			case "rain": 
+				return "Rain";	
+			case "clouds":
+				return "Cloud";
+			//TODO verify sun is a valid description 
+			case "sun": 
+				return "Sun";
+			}
+
+			return string.Empty;
 		}
 
 		/// <summary>
