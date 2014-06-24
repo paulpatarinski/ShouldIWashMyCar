@@ -7,7 +7,7 @@ namespace Core
 	{
 		public static Page GetMainPage ()
 		{	
-			return new MainPage ();
+			return new NavigationPage (new MainPage ()){ };
 		}
 	}
 }

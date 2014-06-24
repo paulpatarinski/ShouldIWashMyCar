@@ -9,13 +9,12 @@ using System.Threading;
 
 namespace Core
 {
-	public class MainPageViewModel : BaseViewModel
+	public class LoadingViewModel : BaseViewModel
 	{
-		public MainPageViewModel (INavigation navigation, IForecastService forecastService)
+		public LoadingViewModel (INavigation navigation, IForecastService forecastService)
 		{
 			_navigation = navigation;
 			_forecastService = forecastService;
-			ForecastIsVisible = false;
 
 			Setup ();
 
@@ -46,25 +45,6 @@ namespace Core
 			StatusMessage = e.Error.ToString ();
 		}
 
-		private List<WeatherViewTemplate> _weatherList;
-
-		public List<WeatherViewTemplate> WeatherList {
-			get {
-				if (_weatherList == null) {
-					_weatherList = new List<WeatherViewTemplate> ();
-				}
-				return _weatherList;
-			}
-			set { ChangeAndNotify (ref _weatherList, value); }
-		}
-
-		private string _daysClean;
-
-		public string DaysClean {
-			get { return _daysClean; }
-			set { ChangeAndNotify (ref _daysClean, value); }
-		}
-
 		private string _statusMessage;
 
 		public string StatusMessage {
@@ -79,19 +59,7 @@ namespace Core
 			set { ChangeAndNotify (ref _statusMessageIsVisible, value); }
 		}
 
-		private bool _forecastIsVisibile;
-
-		public bool ForecastIsVisible {
-			get { return _forecastIsVisibile; }
-			set { ChangeAndNotify (ref _forecastIsVisibile, value); }
-		}
-
-		private string _reason;
-
-		public string Reason {
-			get { return _reason; }
-			set { ChangeAndNotify (ref _reason, value); }
-		}
+		public Forecast Forecast{ get; set; }
 
 		private async Task GetForecastAsync ()
 		{
@@ -122,16 +90,9 @@ namespace Core
 
 				var forecast = await _forecastService.GetForecastAsync (position);
 
-				Device.BeginInvokeOnMainThread (() => {
-					StatusMessageIsVisible = false;
+				Forecast = forecast;
 
-					DaysClean = forecast.DaysClean.ToString ();
-					Reason = forecast.Reason;
-					WeatherList = forecast.WeatherList;
-
-					ForecastIsVisible = true;
-				});
-
+				await _navigation.PopAsync ();
 			}
 		}
 	}
