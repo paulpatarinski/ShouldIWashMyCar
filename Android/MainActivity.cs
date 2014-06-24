@@ -8,7 +8,7 @@ using Xamarin.Forms.Platform.Android;
 
 namespace ShouldIWashMyCar.Android
 {
-	[Activity (Label = "ShouldIWashMyCar.Android.Android", MainLauncher = true)]
+	[Activity (Label = "ShouldIWashMyCar", Icon = "@drawable/icon", MainLauncher = true)]
 	public class MainActivity : AndroidActivity
 	{
 		protected override void OnCreate (Bundle bundle)
