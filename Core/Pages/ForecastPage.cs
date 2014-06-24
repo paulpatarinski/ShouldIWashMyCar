@@ -14,8 +14,8 @@ namespace Core
 
 			var masterGrid = new Grid {
 				RowDefinitions = new RowDefinitionCollection {
-					new RowDefinition{ Height = new GridLength (0.2, GridUnitType.Star) },
-					new RowDefinition{ Height = new GridLength (0.4, GridUnitType.Star) },
+					new RowDefinition{ Height = new GridLength (0.22, GridUnitType.Star) },
+					new RowDefinition{ Height = new GridLength (0.38, GridUnitType.Star) },
 					new RowDefinition{ Height = new GridLength (0.4, GridUnitType.Star) }
 				},
 				ColumnDefinitions = new ColumnDefinitionCollection{ new ColumnDefinition{ Width = new GridLength (1, GridUnitType.Star) } }

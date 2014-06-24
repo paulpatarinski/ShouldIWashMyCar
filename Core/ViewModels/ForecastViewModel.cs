@@ -18,10 +18,10 @@ namespace Core
 
 			DaysClean = forecast.DaysClean.ToString ();
 
-			if (forecast.DaysClean > 1)
-				DaysText = "days";
-			else
+			if (forecast.DaysClean == 1)
 				DaysText = "day";
+			else
+				DaysText = "days";
 				
 			Reason = forecast.Reason;
 			WeatherList = forecast.WeatherList;
