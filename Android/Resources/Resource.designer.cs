@@ -195,13 +195,16 @@ namespace ShouldIWashMyCar.Android
 			public const int calendar_bg_selector = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int Icon = 2130837505;
+			public const int CarSideView = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int Radar = 2130837506;
+			public const int Icon = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int Sunny = 2130837507;
+			public const int Radar = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int Sunny = 2130837508;
 			
 			static Drawable()
 			{

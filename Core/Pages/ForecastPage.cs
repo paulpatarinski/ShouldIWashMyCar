@@ -14,7 +14,8 @@ namespace Core
 
 			var masterGrid = new Grid {
 				RowDefinitions = new RowDefinitionCollection {
-					new RowDefinition{ Height = new GridLength (0.5, GridUnitType.Star) },
+					new RowDefinition{ Height = new GridLength (0.2, GridUnitType.Star) },
+					new RowDefinition{ Height = new GridLength (0.3, GridUnitType.Star) },
 					new RowDefinition{ Height = new GridLength (0.5, GridUnitType.Star) }
 				},
 				ColumnDefinitions = new ColumnDefinitionCollection{ new ColumnDefinition{ Width = new GridLength (1, GridUnitType.Star) } }
@@ -30,39 +31,38 @@ namespace Core
 			forecastListview.ItemTemplate = forecastListviewItemTemplate;
 			forecastListview.SetBinding<ForecastViewModel> (ListView.ItemsSourceProperty, vm => vm.WeatherList);
 
+			var carImage = new Image{ Source = "CarSideView", HorizontalOptions = LayoutOptions.CenterAndExpand };
+
 			masterGrid.Children.Add (CreateForecastStatusStackLayout (), 0, 0);
-			masterGrid.Children.Add (forecastListview, 0, 1);
+			masterGrid.Children.Add (carImage, 0, 1);
+			masterGrid.Children.Add (forecastListview, 0, 2);
 
 			Content = masterGrid;
 		}
 
 		StackLayout CreateForecastStatusStackLayout ()
 		{
-			var stackLayout = new StackLayout {
-				Orientation = StackOrientation.Horizontal,
-				HorizontalOptions = LayoutOptions.CenterAndExpand,
-				VerticalOptions = LayoutOptions.CenterAndExpand
-			};
-
-			var daysLabel = new LargeLabel ();
+			var daysLabel = new ExtraLargeLabel { HorizontalOptions = LayoutOptions.Center };
 			daysLabel.SetBinding<ForecastViewModel> (Label.TextProperty, vm => vm.DaysClean);
 
-			var reasonLabel = new LargeLabel ();
-			reasonLabel.SetBinding<ForecastViewModel> (Label.TextProperty, vm => vm.Reason);
+			var horizontalStackLayout = new StackLayout {
+				Orientation = StackOrientation.Horizontal,
+				HorizontalOptions = LayoutOptions.Center,
+				VerticalOptions = LayoutOptions.Start,
+				Padding = new Thickness (0, 0, 10, 0)
+			};
 
-			stackLayout.Children.Add (new LargeLabel {
-				Text = "Clean for "
+			horizontalStackLayout.Children.Add (new LargeLabel {
+				Text = "Clean for ",
+				VerticalOptions = LayoutOptions.CenterAndExpand
+			});
+			horizontalStackLayout.Children.Add (daysLabel);
+			horizontalStackLayout.Children.Add (new LargeLabel {
+				Text = " days",
+				VerticalOptions = LayoutOptions.CenterAndExpand
 			});
 
-			stackLayout.Children.Add (daysLabel);
-
-			stackLayout.Children.Add (new LargeLabel {
-				Text = "days...due to"
-			});
-
-			stackLayout.Children.Add (reasonLabel);
-
-			return stackLayout;
+			return horizontalStackLayout;
 		}
 	}
 }

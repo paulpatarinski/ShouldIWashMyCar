@@ -7,7 +7,8 @@ namespace Core
 	{
 		public LargeLabel ()
 		{
-			Font = Font.SystemFontOfSize (NamedSize.Large);
+			Font = Font.SystemFontOfSize (20);
+			TextColor = Color.White;
 		}
 	}
 }
