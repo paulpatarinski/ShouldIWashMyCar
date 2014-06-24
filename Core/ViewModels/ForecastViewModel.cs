@@ -17,6 +17,12 @@ namespace Core
 			this.navigation = navigation;
 
 			DaysClean = forecast.DaysClean.ToString ();
+
+			if (forecast.DaysClean > 1)
+				DaysText = "days";
+			else
+				DaysText = "day";
+				
 			Reason = forecast.Reason;
 			WeatherList = forecast.WeatherList;
 		}
@@ -47,5 +53,11 @@ namespace Core
 			set { ChangeAndNotify (ref _daysClean, value); }
 		}
 
+		private string _daysText;
+
+		public string DaysText {
+			get { return _daysText; }
+			set { ChangeAndNotify (ref _daysText, value); }
+		}
 	}
 }

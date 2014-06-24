@@ -15,8 +15,8 @@ namespace Core
 			var masterGrid = new Grid {
 				RowDefinitions = new RowDefinitionCollection {
 					new RowDefinition{ Height = new GridLength (0.2, GridUnitType.Star) },
-					new RowDefinition{ Height = new GridLength (0.3, GridUnitType.Star) },
-					new RowDefinition{ Height = new GridLength (0.5, GridUnitType.Star) }
+					new RowDefinition{ Height = new GridLength (0.4, GridUnitType.Star) },
+					new RowDefinition{ Height = new GridLength (0.4, GridUnitType.Star) }
 				},
 				ColumnDefinitions = new ColumnDefinitionCollection{ new ColumnDefinition{ Width = new GridLength (1, GridUnitType.Star) } }
 			};
@@ -31,7 +31,11 @@ namespace Core
 			forecastListview.ItemTemplate = forecastListviewItemTemplate;
 			forecastListview.SetBinding<ForecastViewModel> (ListView.ItemsSourceProperty, vm => vm.WeatherList);
 
-			var carImage = new Image{ Source = "CarSideView", HorizontalOptions = LayoutOptions.CenterAndExpand };
+			var carImage = new Image {
+				Source = "CarSideView",
+				HorizontalOptions = LayoutOptions.CenterAndExpand,
+				VerticalOptions = LayoutOptions.Start
+			};
 
 			masterGrid.Children.Add (CreateForecastStatusStackLayout (), 0, 0);
 			masterGrid.Children.Add (carImage, 0, 1);
@@ -45,6 +49,9 @@ namespace Core
 			var daysLabel = new ExtraLargeLabel { HorizontalOptions = LayoutOptions.Center };
 			daysLabel.SetBinding<ForecastViewModel> (Label.TextProperty, vm => vm.DaysClean);
 
+			var daysTextLabel = new LargeLabel { VerticalOptions = LayoutOptions.CenterAndExpand };
+			daysTextLabel.SetBinding<ForecastViewModel> (Label.TextProperty, vm => vm.DaysText);
+
 			var horizontalStackLayout = new StackLayout {
 				Orientation = StackOrientation.Horizontal,
 				HorizontalOptions = LayoutOptions.Center,
@@ -57,10 +64,7 @@ namespace Core
 				VerticalOptions = LayoutOptions.CenterAndExpand
 			});
 			horizontalStackLayout.Children.Add (daysLabel);
-			horizontalStackLayout.Children.Add (new LargeLabel {
-				Text = " days",
-				VerticalOptions = LayoutOptions.CenterAndExpand
-			});
+			horizontalStackLayout.Children.Add (daysTextLabel);
 
 			return horizontalStackLayout;
 		}
