@@ -7,13 +7,15 @@ namespace Core
 {
 	public class LoadingPage : ContentPage
 	{
-		public LoadingPage ()
+		public LoadingPage (RootPage rootPage)
 		{
+			_rootPage = rootPage;
 			NavigationPage.SetHasNavigationBar (this, false);
 
 			//TODO : Inject ForecastService
 
-			BindingContext = new LoadingViewModel (Navigation, new ForecastService (new OpenWeatherMapService (new HttpClient ())));
+			_viewModel = new LoadingViewModel (Navigation, new ForecastService (new OpenWeatherMapService (new HttpClient ())), rootPage);
+			BindingContext = _viewModel;
 
 			var statusMessageLabel = new LargeLabel {
 				HorizontalOptions = LayoutOptions.Center,
@@ -38,6 +40,24 @@ namespace Core
 
 			Content = stackLayout;
 		}
+
+		RootPage _rootPage {
+			get;
+			set;
+		}
+
+		LoadingViewModel _viewModel {
+			get;
+			set;
+		}
+
+		protected override void OnDisappearing ()
+		{
+			base.OnDisappearing ();
+
+			_rootPage.NavigateTo (new ForecastOptionItem (), _viewModel.Forecast);
+		}
+
 	}
 }
 

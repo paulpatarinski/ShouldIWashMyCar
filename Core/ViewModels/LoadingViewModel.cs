@@ -11,8 +11,9 @@ namespace Core
 {
 	public class LoadingViewModel : BaseViewModel
 	{
-		public LoadingViewModel (INavigation navigation, IForecastService forecastService)
+		public LoadingViewModel (INavigation navigation, IForecastService forecastService, RootPage rootPage)
 		{
+			this.rootPage = rootPage;
 			_navigation = navigation;
 			_forecastService = forecastService;
 
@@ -27,6 +28,7 @@ namespace Core
 			}
 		}
 
+		RootPage rootPage;
 		INavigation _navigation;
 		readonly IForecastService _forecastService;
 		IGeolocator _geolocator;
@@ -91,9 +93,9 @@ namespace Core
 				LoadingImage = "Sunny";
 				StatusMessage = "Getting weather forecast...";
 
-				var forecast = await _forecastService.GetForecastAsync (position);
+				Forecast = await _forecastService.GetForecastAsync (position);
 
-				await _navigation.PushAsync (new ForecastPage (forecast));
+				await _navigation.PopModalAsync ();
 			}
 		}
 	}
