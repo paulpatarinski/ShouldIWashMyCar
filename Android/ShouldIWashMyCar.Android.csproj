@@ -68,6 +68,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderers\ImageButtonRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -85,6 +86,7 @@
     <AndroidResource Include="Resources\drawable\Rain.png" />
     <AndroidResource Include="Resources\drawable\Cloud.png" />
     <AndroidResource Include="Resources\drawable\Sun.png" />
+    <AndroidResource Include="Resources\drawable\Refresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.1.1.6206\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" />
@@ -93,5 +95,8 @@
       <Project>{704E57AD-49F8-48B3-81FC-C9A9C7BD5408}</Project>
       <Name>Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Renderers\" />
   </ItemGroup>
 </Project>

@@ -22,7 +22,7 @@ namespace Core
 			ShowLoadingDialog ();
 		}
 
-		async Task ShowLoadingDialog ()
+		public async Task ShowLoadingDialog ()
 		{
 			var page = new LoadingPage (this);
 			await Navigation.PushModalAsync (page);
@@ -58,7 +58,7 @@ namespace Core
 			}
 
 			if (option.Title == "Forecast")
-				return new ForecastPage ((Forecast)parameters);
+				return new ForecastPage (this, (Forecast)parameters);
 
 			throw new NotImplementedException ("Unknown menu option: " + option.Title);
 		}
