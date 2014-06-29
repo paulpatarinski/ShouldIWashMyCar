@@ -77,6 +77,8 @@ namespace Core.Services
 			//TODO verify sun is a valid description 
 			case "sun": 
 				return "Sun";
+			case "clear":
+				return "Clear";
 			}
 
 			return string.Empty;

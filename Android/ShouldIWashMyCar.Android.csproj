@@ -87,6 +87,7 @@
     <AndroidResource Include="Resources\drawable\Cloud.png" />
     <AndroidResource Include="Resources\drawable\Sun.png" />
     <AndroidResource Include="Resources\drawable\Refresh.png" />
+    <AndroidResource Include="Resources\drawable\Clear.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.1.1.6206\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" />
