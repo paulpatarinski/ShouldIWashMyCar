@@ -74,9 +74,8 @@ namespace Core.Services
 				return "Rain";	
 			case "clouds":
 				return "Cloud";
-			//TODO verify sun is a valid description 
-			case "sun": 
-				return "Sun";
+			case "snow": 
+				return "Snow";
 			case "clear":
 				return "Clear";
 			}
@@ -107,7 +106,7 @@ namespace Core.Services
 
 		private bool WeatherIsBad (Weather weatherForToday)
 		{
-			if (weatherForToday.Main == "Rain") {
+			if (weatherForToday.Main == "Rain" || weatherForToday.Main == "Snow") {
 				return true;
 			}
 
