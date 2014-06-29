@@ -91,6 +91,7 @@ namespace Core
 			set { ChangeAndNotify (ref _isActivityIndicatorVisible, value); }
 		}
 
+
 		public async Task GetForecastAsync ()
 		{
 			IsActivityIndicatorVisible = true;
@@ -99,6 +100,7 @@ namespace Core
 			_cancelSource = new CancellationTokenSource ();
 
 			Position position = null;
+			_geolocator.DesiredAccuracy = 50;
 
 			await _geolocator.GetPositionAsync (timeout: 10000, cancelToken: _cancelSource.Token, includeHeading: true).ContinueWith (t => {
 				IsActivityIndicatorVisible = false;
