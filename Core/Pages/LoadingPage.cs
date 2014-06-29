@@ -34,9 +34,19 @@ namespace Core
 
 			loadingImage.SetBinding<LoadingViewModel> (Image.SourceProperty, vm => vm.LoadingImage);
 
+			var refreshButton = new Button{ Text = "Refresh" };
+
+			refreshButton.SetBinding<LoadingViewModel> (Button.CommandProperty, vm => vm.GetForecastCommand);
+			refreshButton.SetBinding<LoadingViewModel> (VisualElement.IsVisibleProperty, vm => vm.IsRefreshButtonVisible);
+
+			var activityIndicator = new ActivityIndicator{ IsRunning = true };
+
+			activityIndicator.SetBinding<LoadingViewModel> (VisualElement.IsVisibleProperty, vm => vm.IsActivityIndicatorVisible);
+
 			stackLayout.Children.Add (loadingImage);
 			stackLayout.Children.Add (statusMessageLabel);
-			stackLayout.Children.Add (new ActivityIndicator{ IsRunning = true }); 	
+			stackLayout.Children.Add (activityIndicator); 	
+			stackLayout.Children.Add (refreshButton);
 
 			Content = stackLayout;
 		}

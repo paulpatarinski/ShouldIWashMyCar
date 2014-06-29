@@ -18,13 +18,16 @@ namespace Core
 			_forecastService = forecastService;
 
 			LoadingImage = "Radar";
+			IsRefreshButtonVisible = false;
+			IsActivityIndicatorVisible = false;
 
 			Setup ();
 
 			if (_geolocator.IsGeolocationEnabled) {
 				GetForecastAsync ();
 			} else {
-				StatusMessage = "GPS Disabled, please enable GPS.";
+				StatusMessage = "GPS is disabled, please enable GPS and refresh.";
+				IsRefreshButtonVisible = true;
 			}
 		}
 
@@ -66,8 +69,31 @@ namespace Core
 
 		public Forecast Forecast{ get; set; }
 
-		private async Task GetForecastAsync ()
+		private Command _getForecastCommand;
+
+		public Command GetForecastCommand {
+			get {
+				return _getForecastCommand ?? (_getForecastCommand = new Command (async () => await GetForecastAsync ()));
+			}
+		}
+
+		private bool _isRefreshButtonVisible;
+
+		public bool IsRefreshButtonVisible {
+			get { return _isRefreshButtonVisible; }
+			set { ChangeAndNotify (ref _isRefreshButtonVisible, value); }
+		}
+
+		private bool _isActivityIndicatorVisible;
+
+		public bool IsActivityIndicatorVisible {
+			get { return _isActivityIndicatorVisible; }
+			set { ChangeAndNotify (ref _isActivityIndicatorVisible, value); }
+		}
+
+		public async Task GetForecastAsync ()
 		{
+			IsActivityIndicatorVisible = true;
 			StatusMessage = "Getting current location...";
 
 			_cancelSource = new CancellationTokenSource ();
@@ -75,21 +101,28 @@ namespace Core
 			Position position = null;
 
 			await _geolocator.GetPositionAsync (timeout: 10000, cancelToken: _cancelSource.Token, includeHeading: true).ContinueWith (t => {
+				IsActivityIndicatorVisible = false;
+
 				if (t.IsFaulted) {
+					IsRefreshButtonVisible = true;
+
 					var geolocationException = t.Exception.InnerException as GeolocationException;
 
 					if (geolocationException == null)
 						StatusMessage = t.Exception.InnerException.ToString ();
 					else
 						StatusMessage = geolocationException.Error.ToString ();
-				} else if (t.IsCanceled)
-					StatusMessage = "Permission Denied";
-				else {
+				} else if (t.IsCanceled) {
+					StatusMessage = "Permission denied, please allow the application to access GPS and refresh.";
+					IsRefreshButtonVisible = true;
+				} else {
 					position = t.Result;
 				}
 			}, scheduler);
 
 			if (position != null) {
+				IsActivityIndicatorVisible = true;
+				IsRefreshButtonVisible = false;
 				LoadingImage = "Sunny";
 				StatusMessage = "Getting weather forecast...";
 
