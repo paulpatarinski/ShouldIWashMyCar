@@ -1,5 +1,3 @@
-*bin*
-*obj*
 Android/obj/*
 ShouldIWashMyCar.userprefs
 Core/obj/*
@@ -7,3 +5,5 @@ Android/obj/*
 Android/obj/Debug/*
 Core/obj/Debug/*
 ShouldIWashMyCar.userprefs
+Core/bin/
+Android/obj/
