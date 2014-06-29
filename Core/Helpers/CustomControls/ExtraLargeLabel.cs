@@ -7,7 +7,7 @@ namespace Core
 	{
 		public ExtraLargeLabel ()
 		{
-			Font = Font.BoldSystemFontOfSize (110);
+			Font = Font.BoldSystemFontOfSize (90);
 			TextColor = Color.FromHex ("#F9690E");
 		}
 	}
