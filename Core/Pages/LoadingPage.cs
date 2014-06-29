@@ -20,21 +20,22 @@ namespace Core
 			var statusMessageLabel = new LargeLabel {
 				HorizontalOptions = LayoutOptions.Center,
 				VerticalOptions = LayoutOptions.Center,
-				TextColor = Color.White
+				TextColor = Color.White,
 			};
 
 			statusMessageLabel.SetBinding<LoadingViewModel> (Label.TextProperty, vm => vm.StatusMessage);
 
 			var stackLayout = new StackLayout {
 				HorizontalOptions = LayoutOptions.Center,
-				VerticalOptions = LayoutOptions.Center
+				VerticalOptions = LayoutOptions.Center,
+				Spacing = 10
 			};
 
 			var loadingImage = new Image ();
 
 			loadingImage.SetBinding<LoadingViewModel> (Image.SourceProperty, vm => vm.LoadingImage);
 
-			var refreshButton = new Button{ Text = "Refresh" };
+			var refreshButton = new Button{ Text = "Refresh", HorizontalOptions = LayoutOptions.Center };
 
 			refreshButton.SetBinding<LoadingViewModel> (Button.CommandProperty, vm => vm.GetForecastCommand);
 			refreshButton.SetBinding<LoadingViewModel> (VisualElement.IsVisibleProperty, vm => vm.IsRefreshButtonVisible);
