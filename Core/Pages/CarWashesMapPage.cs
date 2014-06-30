@@ -1,6 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Core
 {
@@ -20,11 +22,24 @@ namespace Core
 
 		readonly Xamarin.Forms.Labs.Services.Geolocation.Position location;
 
+		List<Place> GetCarWashes ()
+		{
+			var googlePlacesService = new GooglePlacesService (new System.Net.Http.HttpClient ());
+
+			var carWashesTask = googlePlacesService.GetCarWashesAsync (location);
+			carWashesTask.Wait ();
+			return carWashesTask.Result;
+		}
+
 		Map MakeMap ()
 		{
 			// TODO: Uncomment once Xamarin.Forms supports this, hopefully w/ version 1.1.
 			//var dict = pins.Zip(ViewModel.Models, (p, m)=>new KeyValuePair<Pin,T>(p, m)).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
 			//PinMap = dict;
+
+
+			//TODO : Move this to the viewmodel
+			var carWashes = GetCarWashes ();
 
 			var pin = new Pin ();
 			pin.Type = PinType.Generic;
@@ -36,6 +51,16 @@ namespace Core
 			};
 
 			map.Pins.Add (pin);
+
+			foreach (var carWash in carWashes) {
+				var carWashPin = new Pin ();
+				pin.Type = PinType.SearchResult;
+				pin.Position = new Position (carWash.geometry.location.lat, carWash.geometry.location.lng);
+				pin.Label = carWash.name;
+				pin.Address = carWash.vicinity;
+
+				map.Pins.Add (carWashPin);
+			}
 
 			// TODO: Uncomment once Xamarin.Forms supports this, hopefully w/ version 1.1.
 			//            map.PinSelected += (sender, args)=>

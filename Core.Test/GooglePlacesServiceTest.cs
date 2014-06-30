@@ -12,7 +12,7 @@ namespace Core.Test
 	public class GooglePlacesServiceTest
 	{
 		[Test]
-		public async Task GetCarWashesAsync_ShouldReturnCarWashes ()
+		public async void GetCarWashesAsync_ShouldReturnCarWashes ()
 		{
 			var googlePlacesService = new GooglePlacesService (new System.Net.Http.HttpClient ());
 
