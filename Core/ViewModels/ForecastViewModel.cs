@@ -2,6 +2,7 @@
 using Core.Models;
 using Xamarin.Forms;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Core
 {
@@ -58,6 +59,19 @@ namespace Core
 		public string DaysText {
 			get { return _daysText; }
 			set { ChangeAndNotify (ref _daysText, value); }
+		}
+
+		private Command _showCarWashesMapCommand;
+
+		public Command ShowCarWashesMapCommand {
+			get {
+				return _showCarWashesMapCommand ?? (_showCarWashesMapCommand = new Command (async () => await ShowCarWashesMapAsync ()));
+			}
+		}
+
+		async Task ShowCarWashesMapAsync ()
+		{
+			await navigation.PushAsync (new CarWashesMapPage (forecast.Location));
 		}
 	}
 }

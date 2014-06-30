@@ -23,7 +23,9 @@ namespace Core.Services
 		public async Task<Forecast> GetForecastAsync (Position location)
 		{
 			var openWeatherForecast = await _openWeatherMapService.Get7DayForecastAsync (location);
-			var forecast = new Forecast ();
+			var forecast = new Forecast () {
+				Location = location
+			};
 
 			var daysClean = 0;
 			var dtf = new DateTimeFormatInfo ();

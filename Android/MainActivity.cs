@@ -15,7 +15,7 @@ namespace ShouldIWashMyCar.Android
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-
+			Xamarin.FormsMaps.Init (this, bundle);
 			Xamarin.Forms.Forms.Init (this, bundle);
 
 			SetPage (App.GetMainPage ());

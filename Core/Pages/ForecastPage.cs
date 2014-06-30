@@ -35,12 +35,6 @@ namespace Core
 			forecastListview.ItemTemplate = forecastListviewItemTemplate;
 			forecastListview.SetBinding<ForecastViewModel> (ListView.ItemsSourceProperty, vm => vm.WeatherList);
 
-			var carImage = new Image {
-				Source = "CarSideView",
-				HorizontalOptions = LayoutOptions.CenterAndExpand,
-				VerticalOptions = LayoutOptions.Start
-			};
-
 			var refreshImage = new ImageButton () {
 				Image = "Refresh",
 				ImageHeightRequest = 70,
@@ -66,7 +60,7 @@ namespace Core
 			topGrid.Children.Add (refreshImage, 1, 0);
 
 			masterGrid.Children.Add (topGrid, 0, 0);
-			masterGrid.Children.Add (carImage, 0, 1);
+			masterGrid.Children.Add (CreateMiddleStackLayout (), 0, 1);
 			masterGrid.Children.Add (forecastListview, 0, 2);
 
 			Content = masterGrid;
@@ -98,6 +92,31 @@ namespace Core
 			horizontalStackLayout.Children.Add (daysTextLabel);
 
 			return horizontalStackLayout;
+		}
+
+		StackLayout CreateMiddleStackLayout ()
+		{
+			var stackLayout = new StackLayout{ };
+
+			var carWashButton = new Button {
+				Text = "Show Car Washes",
+				BackgroundColor = Color.Transparent,
+				HorizontalOptions = LayoutOptions.CenterAndExpand
+			};
+
+			carWashButton.SetBinding<ForecastViewModel> (Button.CommandProperty, vm => vm.ShowCarWashesMapCommand);
+
+			var carImage = new Image {
+				Source = "CarSideView",
+				HorizontalOptions = LayoutOptions.CenterAndExpand,
+				VerticalOptions = LayoutOptions.Start
+			};
+
+
+			stackLayout.Children.Add (carWashButton);
+			stackLayout.Children.Add (carImage);
+
+			return stackLayout;
 		}
 	}
 }
