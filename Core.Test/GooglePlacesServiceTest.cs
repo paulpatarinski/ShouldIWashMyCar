@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using NUnit.Framework;
 using NuGet;
 using Xamarin.Forms.Labs.Services.Geolocation;
@@ -11,7 +12,7 @@ namespace Core.Test
 	public class GooglePlacesServiceTest
 	{
 		[Test]
-		public async void GetOpenWeatherForecast_ShouldReturnTheWeatherForecast ()
+		public async Task GetCarWashesAsync_ShouldReturnCarWashes ()
 		{
 			var googlePlacesService = new GooglePlacesService (new System.Net.Http.HttpClient ());
 

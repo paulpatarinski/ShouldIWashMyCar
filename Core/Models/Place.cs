@@ -7,6 +7,8 @@ namespace Core
 	{
 		public string name { get; set; }
 
+		public string vicinity { get; set; }
+
 		public Geometry geometry { get; set; }
 	}
 
