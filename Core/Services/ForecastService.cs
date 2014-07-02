@@ -37,8 +37,8 @@ namespace Core.Services
 				forecast.WeatherList.Add (new WeatherViewTemplate {
 					WeatherCondition = weather.Description,
 					DayAbbreviation = dtf.GetAbbreviatedDayName (date.DayOfWeek),
-					TempHigh = forecastItem.Temperature.Max.ToString () + "º",
-					TempLow = forecastItem.Temperature.Min.ToString () + "º",
+					TempHigh = Convert.ToInt32(forecastItem.Temperature.Max) + "º",
+					TempLow = Convert.ToInt32(forecastItem.Temperature.Min) + "º",
 					Icon = GetWeatherIcon (weather.Main)
 				});
 			
