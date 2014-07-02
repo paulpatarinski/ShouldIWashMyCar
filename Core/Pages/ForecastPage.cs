@@ -11,7 +11,8 @@ namespace Core
 		public ForecastPage (RootPage rootPage, Forecast forecast)
 		{
 			this._rootPage = rootPage;
-			BindingContext = new ForecastViewModel (Navigation, forecast);
+			_forecast = forecast;
+			BindingContext = new ForecastViewModel (Navigation, _forecast);
 
 			NavigationPage.SetHasNavigationBar (this, false);
 
@@ -67,11 +68,14 @@ namespace Core
 		}
 
 		RootPage _rootPage;
+		private Forecast _forecast;
 
 		StackLayout CreateForecastStatusStackLayout ()
 		{
 			var daysLabel = new ExtraLargeLabel { HorizontalOptions = LayoutOptions.Center };
+			
 			daysLabel.SetBinding<ForecastViewModel> (Label.TextProperty, vm => vm.DaysClean);
+			daysLabel.TextColor = GetDaysCleanTextColor (_forecast.DaysClean);
 
 			var daysTextLabel = new LargeLabel { VerticalOptions = LayoutOptions.CenterAndExpand };
 			daysTextLabel.SetBinding<ForecastViewModel> (Label.TextProperty, vm => vm.DaysText);
@@ -92,6 +96,29 @@ namespace Core
 			horizontalStackLayout.Children.Add (daysTextLabel);
 
 			return horizontalStackLayout;
+		}
+
+		/// <summary>
+		/// Return different text color based 
+		/// on how many days the car is going to stay clean
+		/// </summary>
+		/// <param name="daysClean"></param>
+		/// <returns></returns>
+		private Color GetDaysCleanTextColor (int daysClean)
+		{
+			//Colors from : http://www.flatuicolorpicker.com/
+			switch (daysClean) {
+			case 0:
+			case 1:
+          //Thunderbird(red)
+				return Color.FromHex ("#D91E18");
+			case 2:
+          //ripe lemon(yellow)
+				return Color.FromHex ("#F7CA18");
+			default :
+          //Eucalyptus(green)
+				return Color.FromHex ("#26A65B");
+			}
 		}
 
 		StackLayout CreateMiddleStackLayout ()
