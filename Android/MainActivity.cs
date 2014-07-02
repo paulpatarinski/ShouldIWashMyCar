@@ -9,7 +9,7 @@ using Android.Content.PM;
 
 namespace ShouldIWashMyCar.Android
 {
-	[Activity (Label = "ShouldIWashMyCar", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	[Activity (Label = "Car Wash", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : AndroidActivity
 	{
 		protected override void OnCreate (Bundle bundle)
