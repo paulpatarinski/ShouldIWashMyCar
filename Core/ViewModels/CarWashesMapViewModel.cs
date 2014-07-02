@@ -1,36 +1,27 @@
-﻿using Xamarin.Forms.Maps;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xamarin.Forms.Maps;
 
 namespace Core
 {
   public class CarWashesMapViewModel
   {
     public CarWashesMapViewModel(IGooglePlacesService googlePlacesService,
-      Xamarin.Forms.Labs.Services.Geolocation.Position currentPosition)
+      Position currentPosition)
     {
       _googlePlacesService = googlePlacesService;
       _currentPosition = currentPosition;
     }
 
     private readonly IGooglePlacesService _googlePlacesService;
-    private readonly Xamarin.Forms.Labs.Services.Geolocation.Position _currentPosition;
+    private readonly Position _currentPosition;
 
 
-    public Map GetMap()
+    public async Task<List<Pin>> GetMapPinsAsync()
     {
+      var carWashPins = new List<Pin>();
 
-      var currentLocationPin = new Pin();
-      currentLocationPin.Type = PinType.Generic;
-      currentLocationPin.Position = new Position(_currentPosition.Latitude, _currentPosition.Longitude);
-      currentLocationPin.Label = "Current Location";
-
-      var map = new Map(MapSpan.FromCenterAndRadius(currentLocationPin.Position, Distance.FromMiles(5)))
-      {
-        IsShowingUser = true
-      };
-
-      var carWashes = _googlePlacesService.GetCarWashesAsync(_currentPosition).Result;
-
-      map.Pins.Add(currentLocationPin);
+      var carWashes = await _googlePlacesService.GetCarWashesAsync(_currentPosition);
 
       foreach (var carWash in carWashes)
       {
@@ -42,10 +33,10 @@ namespace Core
           Address = carWash.vicinity
         };
 
-        map.Pins.Add(carWashPin);
+        carWashPins.Add(carWashPin);
       }
 
-      return map;
+      return carWashPins;
     }
   }
 }

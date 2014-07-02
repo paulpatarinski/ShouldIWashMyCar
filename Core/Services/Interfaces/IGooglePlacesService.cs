@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Xamarin.Forms.Labs.Services.Geolocation;
+using Position = Xamarin.Forms.Maps.Position;
 
 namespace Core
 {

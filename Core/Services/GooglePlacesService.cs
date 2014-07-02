@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms.Labs.Services.Geolocation;
 using System.Collections.Generic;
 using ShouldIWashMyCar;
+using Position = Xamarin.Forms.Maps.Position;
 
 namespace Core
 {
