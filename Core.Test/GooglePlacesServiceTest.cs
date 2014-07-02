@@ -20,10 +20,9 @@ namespace Core.Test
 				Latitude = 41.890969, Longitude = -87.676392 
 			};
 
-			var resultTask = googlePlacesService.GetCarWashesAsync (location);
-			resultTask.Wait ();
+			var resultTask = googlePlacesService.GetCarWashesAsync (location).Result;
 
-			var places = resultTask.Result as List<Place>;
+			var places = resultTask as List<Place>;
 
 			Assert.IsNotNull (places);
 		}

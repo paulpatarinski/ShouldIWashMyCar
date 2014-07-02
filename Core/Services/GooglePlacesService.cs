@@ -7,7 +7,7 @@ using ShouldIWashMyCar;
 
 namespace Core
 {
-	public class GooglePlacesService
+	public class GooglePlacesService : IGooglePlacesService
 	{
 		public GooglePlacesService (HttpClient httpClient)
 		{
