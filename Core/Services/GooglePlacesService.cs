@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Xamarin.Forms.Labs.Services.Geolocation;
 using System.Collections.Generic;
 using ShouldIWashMyCar;
-using Position = Xamarin.Forms.Maps.Position;
 
 namespace Core
 {
@@ -25,7 +23,7 @@ namespace Core
 		const string GooglePlacesUrl =
 			"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={0},{1}&radius=5000&sensor=true&name=car%wash&key={2}";
 
-		public async Task<List<Place>> GetCarWashesAsync (Position location)
+		public async Task<List<Place>> GetCarWashesAsync (GeoLocation location)
 		{
 			var uri = string.Format (GooglePlacesUrl, location.Latitude,
 				          location.Longitude, API_KEY);

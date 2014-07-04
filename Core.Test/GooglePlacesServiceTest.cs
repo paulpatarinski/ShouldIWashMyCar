@@ -1,9 +1,5 @@
-﻿using System;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using NuGet;
+﻿using NUnit.Framework;
 using Xamarin.Forms.Labs.Services.Geolocation;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace Core.Test
@@ -16,7 +12,7 @@ namespace Core.Test
 		{
 			var googlePlacesService = new GooglePlacesService (new System.Net.Http.HttpClient ());
 
-			var location = new Position {
+			var location = new GeoLocation {
 				Latitude = 41.890969, Longitude = -87.676392 
 			};
 

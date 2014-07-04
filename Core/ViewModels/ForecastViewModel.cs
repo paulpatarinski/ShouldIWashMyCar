@@ -71,7 +71,10 @@ namespace Core
 
 		async Task ShowCarWashesMapAsync ()
 		{
-			await navigation.PushAsync (new CarWashesMapPage (new Xamarin.Forms.Maps.Position (forecast.Location.Latitude, forecast.Location.Longitude)));
+			await navigation.PushAsync (new CarWashesMapPage (new GeoLocation {
+				Latitude = forecast.Location.Latitude,
+				Longitude = forecast.Location.Longitude
+			}));
 		}
 	}
 }

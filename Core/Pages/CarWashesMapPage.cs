@@ -9,7 +9,7 @@ namespace Core
 	{
 		private readonly CarWashesMapViewModel _viewModel;
 
-		public CarWashesMapPage (Position location)
+		public CarWashesMapPage (GeoLocation location)
 		{
 			//Todo : inject the service
 			_viewModel = new CarWashesMapViewModel (new GooglePlacesService (new HttpClient ()), location);
@@ -17,8 +17,10 @@ namespace Core
 			Init (location);
 		}
 
-		private async Task Init (Position location)
+		private async Task Init (GeoLocation geoLocation)
 		{
+			var location = new Position (geoLocation.Latitude, geoLocation.Longitude);
+
 			var map = new Map (MapSpan.FromCenterAndRadius (location, Distance.FromMiles (5))) {
 				IsShowingUser = true
 			};
