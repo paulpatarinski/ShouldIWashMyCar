@@ -30,7 +30,9 @@ namespace Core
 			var forecastListviewItemTemplate = new DataTemplate (typeof(ImageCell));
 
 			forecastListviewItemTemplate.SetBinding (ImageCell.TextProperty, "ItemTemplateTextProperty");
+      forecastListviewItemTemplate.SetValue(ImageCell.TextColorProperty, Color.FromHex("#3498DB"));
 			forecastListviewItemTemplate.SetBinding (ImageCell.DetailProperty, "ItemTemplateDetailProperty");
+      forecastListviewItemTemplate.SetValue(ImageCell.DetailColorProperty, Color.White);
 			forecastListviewItemTemplate.SetBinding (ImageCell.ImageSourceProperty, "Icon");
 
 			forecastListview.ItemTemplate = forecastListviewItemTemplate;
