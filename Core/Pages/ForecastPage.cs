@@ -42,6 +42,7 @@ namespace Core
 				Image = "Refresh.png",
 				ImageHeightRequest = 70,
 				ImageWidthRequest = 70,
+        BorderColor = Color.White,
 				VerticalOptions = LayoutOptions.Start,
 				BackgroundColor = Color.Transparent
 			};
@@ -129,7 +130,6 @@ namespace Core
 
 			var carWashButton = new Button {
 				Text = "Show Car Washes",
-				BackgroundColor = Color.Transparent,
 				HorizontalOptions = LayoutOptions.CenterAndExpand
 			};
 
