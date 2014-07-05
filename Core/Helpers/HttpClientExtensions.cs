@@ -14,7 +14,7 @@ namespace ShouldIWashMyCar
 
 			client.Timeout = TimeSpan.FromSeconds (30);
 
-			var response = client.SendAsync (httpRequest).Result;
+			var response = await client.SendAsync (httpRequest);
 
 			var jsonString = await response.Content.ReadAsStringAsync ();
 
