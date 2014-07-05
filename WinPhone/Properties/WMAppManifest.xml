@@ -2,7 +2,7 @@
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
   <App xmlns="" ProductID="{4b923154-e785-45be-b5f3-aab892d1c601}" Title="Car Wash" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="ShouldIWashMyCar.WinPhone author" Description="An app that tells you how long your car is going to stay clean if you wash it today." Publisher="Simple Productions Inc" PublisherID="{844e064c-bdec-47af-8f23-c9f62bab2b59}">
-    <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
+    <IconPath IsRelative="true" IsResource="false">Assets\Icon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
       <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
