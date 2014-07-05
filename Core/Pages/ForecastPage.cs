@@ -39,10 +39,10 @@ namespace Core
 			forecastListview.SetBinding<ForecastViewModel> (ListView.ItemsSourceProperty, vm => vm.WeatherList);
 
 			var refreshImage = new ImageButton () {
-				Image = "Refresh.png",
+				Image = "Refresh",
 				ImageHeightRequest = 70,
 				ImageWidthRequest = 70,
-        BorderColor = Color.White,
+        BorderColor = Color.Transparent,
 				VerticalOptions = LayoutOptions.Start,
 				BackgroundColor = Color.Transparent
 			};
@@ -55,8 +55,8 @@ namespace Core
 					new RowDefinition{ Height = new GridLength (1, GridUnitType.Star) }
 				},
 				ColumnDefinitions = new ColumnDefinitionCollection { 
-					new ColumnDefinition{ Width = new GridLength (0.85, GridUnitType.Star) },
-					new ColumnDefinition{ Width = new GridLength (0.15, GridUnitType.Star) },
+					new ColumnDefinition{ Width = new GridLength (0.8, GridUnitType.Star) },
+					new ColumnDefinition{ Width = new GridLength (0.2, GridUnitType.Star) },
 				}
 			};
 
@@ -87,7 +87,7 @@ namespace Core
 				Orientation = StackOrientation.Horizontal,
 				HorizontalOptions = LayoutOptions.Center,
 				VerticalOptions = LayoutOptions.Start,
-				Padding = new Thickness (30, 0, 0, 0)
+				Padding = new Thickness (40, 0, 0, 0)
 			};
 
 

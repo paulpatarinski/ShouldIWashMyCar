@@ -147,7 +147,7 @@
     <Content Include="Radar.png" />
     <Content Include="Rain.png" />
     <Content Include="README_FIRST.txt" />
-    <Content Include="Refresh.png" />
+    <Content Include="Images\Refresh.png" />
     <Content Include="Snow.png" />
     <Content Include="Sun.png" />
     <Content Include="Sunny.png" />
