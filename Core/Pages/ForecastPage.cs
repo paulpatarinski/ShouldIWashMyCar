@@ -37,7 +37,7 @@ namespace Core
 			forecastListview.SetBinding<ForecastViewModel> (ListView.ItemsSourceProperty, vm => vm.WeatherList);
 
 			var refreshImage = new ImageButton () {
-				Image = "Refresh",
+				Image = "Refresh.png",
 				ImageHeightRequest = 70,
 				ImageWidthRequest = 70,
 				VerticalOptions = LayoutOptions.Start,
@@ -134,7 +134,7 @@ namespace Core
 			carWashButton.SetBinding<ForecastViewModel> (Button.CommandProperty, vm => vm.ShowCarWashesMapCommand);
 
 			var carImage = new Image {
-				Source = "CarSideView",
+				Source = "CarSideView.png",
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
 				VerticalOptions = LayoutOptions.Start
 			};

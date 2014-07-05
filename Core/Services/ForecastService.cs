@@ -73,13 +73,13 @@ namespace Core.Services
 
 			switch (descriptionToLower) {
 			case "rain": 
-				return "Rain";	
+				return "Rain.png";	
 			case "clouds":
-				return "Cloud";
-			case "snow": 
-				return "Snow";
+        return "Cloud.png";
+			case "snow":
+        return "Snow.png";
 			case "clear":
-				return "Clear";
+        return "Clear.png";
 			}
 
 			return string.Empty;

@@ -17,7 +17,7 @@ namespace Core
 			_navigation = navigation;
 			_forecastService = forecastService;
 
-			LoadingImage = "Radar";
+			LoadingImage = "Radar.png";
 			IsRefreshButtonVisible = false;
 			IsActivityIndicatorVisible = false;
 
@@ -125,7 +125,7 @@ namespace Core
 			if (position != null) {
 				IsActivityIndicatorVisible = true;
 				IsRefreshButtonVisible = false;
-				LoadingImage = "Sunny";
+				LoadingImage = "Sunny.png";
 				StatusMessage = "Getting weather forecast...";
 
 				Forecast = await _forecastService.GetForecastAsync (position);
