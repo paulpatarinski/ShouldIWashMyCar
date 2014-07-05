@@ -5,6 +5,7 @@ Have you ever wondered how long your car is going to stay clean for if you washe
 
 ![screenshot](https://raw.githubusercontent.com/paulpatarinski/ShouldIWashMyCar/master/Screenshots/Android/Combined.png "Android")
 
+![screenshot](https://raw.githubusercontent.com/paulpatarinski/ShouldIWashMyCar/master/Screenshots/WinPhone/Combined.png "WinPhone")
 
 Has examples of : 
 
