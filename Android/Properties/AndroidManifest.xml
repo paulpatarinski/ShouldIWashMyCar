@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.simpleprodinc.carwash">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.simpleproductionsinc.carwash">
 	<uses-sdk android:minSdkVersion="14" />
 	<application android:label="Car Wash" android:icon="@drawable/icon">
 		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDd8OZpkInkvX4VXQ8_6FS6_0ik78LrhA8" />
