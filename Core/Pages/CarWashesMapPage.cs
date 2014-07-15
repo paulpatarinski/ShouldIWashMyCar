@@ -21,7 +21,7 @@ namespace Core
 		{
 			var location = new Position (geoLocation.Latitude, geoLocation.Longitude);
 
-			var map = new Map (MapSpan.FromCenterAndRadius (location, Distance.FromMiles (5))) {
+			var map = new CustomMap (MapSpan.FromCenterAndRadius (location, Distance.FromMiles (5))) {
 				IsShowingUser = true
 			};
       

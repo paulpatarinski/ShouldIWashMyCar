@@ -94,6 +94,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderers\ImageButtonRenderer.cs" />
+    <Compile Include="Renderers\MapViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -108,6 +109,8 @@
     <AndroidResource Include="Resources\drawable\Refresh.png" />
     <AndroidResource Include="Resources\drawable\Clear.png" />
     <AndroidResource Include="Resources\drawable\Snow.png" />
+    <AndroidResource Include="Resources\drawable\CurrentLocation.png" />
+    <AndroidResource Include="Resources\drawable\CarWashMapIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

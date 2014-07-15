@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<IconProject Version="2.0" Name="CurrentLocation">
+  <Icon Name="CurrentLocation" HasCharacterMap="false" IsDirty="true" GroupName="Miscellaneous" ExportCommand="MetroGraphicsPackage.IconCommand" Data="M-1803.39,-939.073C-1813.86,-939.073 -1822.34,-930.589 -1822.34,-920.126 -1822.34,-916.45 -1821.29,-913.022 -1819.48,-910.119L-1811.54,-893.476 -1803.39,-876.405 -1795.25,-893.476 -1787.31,-910.115C-1785.49,-913.021 -1784.45,-916.449 -1784.45,-920.126 -1784.45,-930.589 -1792.93,-939.073 -1803.39,-939.073 M-1803.39,-909.656C-1808.8,-909.656 -1813.18,-914.039 -1813.18,-919.448 -1813.18,-924.854 -1808.8,-929.24 -1803.39,-929.24 -1797.98,-929.24 -1793.6,-924.854 -1793.6,-919.448 -1793.6,-914.039 -1797.98,-909.656 -1803.39,-909.656">
+    <Settings MainWidth="37" MainHeight="37" FlipX="1" FlipY="1" CustomSize="37" IconShape="None" BackgroundBrush="#FF000000" ContentWidth="37" ContentHeight="37" Angle="0" SizeIndex="7" Padding="0" MaximumPadding="11" IconBrush="#FF27AE60" FontFamily="Webdings" Character="&gt;" FlipCommand="MetroGraphicsPackage.IconCommand" IsBackgroundVisible="true" />
+  </Icon>
+</IconProject>
