@@ -25,8 +25,8 @@ namespace Core
 				IsShowingUser = true
 			};
       
-			//iOS displays the current location by default for other platforms add it
-			if (Device.OS != TargetPlatform.iOS) {
+			//Show current location for Win Phone
+			if (Device.OS == TargetPlatform.WinPhone) {
 				map.Pins.Add (new Pin {
 					Type = PinType.Generic,
 					Position = location,

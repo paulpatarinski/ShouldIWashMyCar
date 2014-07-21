@@ -10,13 +10,19 @@ namespace ShouldIWashMyCar.Android
 {
 	public class MapViewRenderer : MapRenderer
 	{
+		bool _isDrawnDone;
+
 		protected override void OnElementPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
 		{
+			base.OnElementPropertyChanged (sender, e);
 			var androidMapView = (MapView)Control;
 			var formsMap = (Map)sender;
 
-			if (e.PropertyName.Equals ("VisibleRegion")) {
+
+			if (e.PropertyName.Equals ("VisibleRegion") && !_isDrawnDone) {
 				androidMapView.Map.Clear ();
+
+				androidMapView.Map.MyLocationEnabled = formsMap.IsShowingUser;
 
 				var formsPins = formsMap.Pins;
 
@@ -34,9 +40,21 @@ namespace ShouldIWashMyCar.Android
 						
 					androidMapView.Map.AddMarker (markerWithIcon);
 				}
-			}
 
-			base.OnElementPropertyChanged (sender, e);
+				_isDrawnDone = true;
+
+			}
+		}
+
+		protected override void OnLayout (bool changed, int l, int t, int r, int b)
+		{
+			base.OnLayout (changed, l, t, r, b);
+
+			//NOTIFY CHANGE
+
+			if (changed) {
+				_isDrawnDone = false;
+			}
 		}
 	}
 }
